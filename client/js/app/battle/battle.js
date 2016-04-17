@@ -54,12 +54,22 @@ define([
 
 		BattleHits.init(battleContainerView);
 
+		time = 60;
+		setInterval(function() {
+			$('.vs-sign').html(time--);
+			if (time < 0) {
+				time = 60;
+			}
+		}, 1000);
+
 	}
 
 	/*** Пришел удар */
 	var processHit = function(data) {
 		BattleHits.processHit(data.hit);
 		battleContainerView.battleLog.addMessage(data.hit.word);
+
+		time = 60;
 	}
 
 	/*** Показываю последний удар и окно результата */

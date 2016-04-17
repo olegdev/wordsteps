@@ -51,14 +51,6 @@ define([
 			this.battleLog = new BattleLogView();
 			$('#battle-log').append(this.battleLog.render().$el);
 
-			var time = 60;
-			setInterval(function() {
-				$('.vs-sign').html(time--);
-				if (time < 0) {
-					time = 60;
-				}
-			}, 1000);
-
 		},
 
 		/**
