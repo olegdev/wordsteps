@@ -1,0 +1,1 @@
+<%= value %> <%= messages.getByKey('money_name') %>

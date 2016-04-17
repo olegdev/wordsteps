@@ -1,0 +1,495 @@
+﻿@font-face {
+	font-family: tin;
+	src: url("fonts/inglobal.ttf") format("opentype");
+}
+
+/*@font-face {
+	font-family: hand;
+	src: url("fonts/Annabelle.ttf") format("opentype");
+}*/
+
+.green-text {
+	color: #1ECA1E;
+}
+.red-text {
+	color: #E89B62;
+}
+
+button {
+	height: 35px;
+	width: 158px;
+	background-color: #1ECA1E;
+    border: none;
+    border-radius: 3px;
+    color: #fff;
+    cursor: pointer;
+    font-family: tin;
+    font-size: 11px;
+}
+
+#location, #battle {
+	width: 450px;
+	height: 266px;
+	margin: 113px auto 0 auto;
+	font-family: tin;
+	position: relative;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+}
+
+#location .location-title,
+#window .window-title {
+	background-color: rgb(240, 249, 245);
+	height: 30px;
+	text-align: center;
+	color: #357F96;
+	border-radius: 2px;
+	line-height: 27px;
+    font-size: 14px;
+}
+
+/**
+ * Всплывающее окошко
+ */
+#window {
+	position: absolute;
+	top: 113px;
+	border: 1px solid #ccc;
+	background-color: #fff;
+	border-radius: 2px;
+	font-family: tin;
+}
+#window .window-close {
+	position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 30px;
+    height: 30px;
+    background: #E89B62;
+    cursor: pointer;
+    font-size: 24px;
+    color: #fff;
+    font-family: arial;
+    text-align: center;
+}
+#window-mask {
+	width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 1;
+    background-color: #fff;
+}
+
+/**
+ * Аватарка юзера с ником
+ */
+.user-avatar {
+	width: 150px;
+	height: 42px;
+	color: #357F96;
+}
+.user-avatar img {
+	border: 1px solid #357F96;
+	border-radius: 26px;
+	float: right;
+	width: 38px;
+	height: 38px;
+}
+.user-avatar.rtl img {
+	float: none;
+}
+.user-avatar.empty img {
+	border: none;
+	opacity: 0.4;
+}
+.user-avatar span {
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 14px;
+	float: right;
+    display: block;
+    text-align: center;
+    width: 110px;
+    height: 29px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-top: 4px;
+}
+.user-avatar span.loading {
+	background-image: url(../img/loader4.gif);
+	background-repeat: no-repeat;
+    background-position: 50%;
+}
+/**
+ * Информация о игроке на главной странице
+ */
+#infoview-box {
+	width: 201px;
+	overflow: hidden;
+	float: left;
+    padding: 27px 0 0 27px;
+    margin-right: 28px;
+    color: #357F96;
+    border-radius: 2px;
+    font-size: 14px;
+
+}
+#infoview-box table {
+	margin: 8px 0 0 14px;
+}
+#infoview-box td {
+	padding: 0px 4px 8px 0;
+}
+#infoview-box td:nth-child(even) {
+	font-weight: bold;
+}
+#infoview-box .add-energy-btn {
+	width: 16px;
+	height: 16px;
+	background-image: url(../img/plus1.png);
+	background-repeat: no-repeat;
+	cursor: pointer;
+	display: inline-block;
+	background-size: contain;
+	margin: 0 0 -2px 2px;
+}
+
+#controlsview-box {
+	width: 174px;
+	overflow: hidden;
+	padding-top: 33px;
+}
+#controlsview-box ul {
+	margin: -4px 0 0 0;
+}
+#controlsview-box li {
+	padding: 4px 0;
+}
+#controlsview-box li button {
+	height: 35px;
+	width: 158px;
+}
+#controlsview-box #rating-btn, #controlsview-box #group-btn {
+	background-color: #567DBF;
+}
+
+/**
+ * Оппоненты (x VS y)
+ */
+.opponents {
+	margin: 27px 0 0 27px;
+}
+
+.opponents .user-avatar {
+ 	display: inline-block;
+    overflow: hidden;
+ }
+
+ .opponents .vs-sign {
+    display: inline-block;
+    overflow: hidden;
+    height: 42px;
+    line-height: 42px;
+    padding: 0 32px;
+    font-size: 14px;
+    font-size: 14px;
+    color: #E89B62;
+    font-weight: bold;
+}
+
+/**
+ * Окно поиска противника
+ **/
+#battle-search-window .hints {
+    padding: 30px;
+    text-align: center;
+    vertical-align: middle;
+    background-color: rgb(240, 249, 245);
+    margin: 36px 0px 0;
+    border: 1px solid #ccc;
+    border-width: 1px 0 0 0;
+    height: 25px;
+    overflow: hidden;
+    border-radius: 2px;
+    font-style: italic;
+}
+
+/**
+ * Бой
+ */
+#battle {
+	margin: 20px auto 0 auto;
+	border: none;
+	height: auto;
+	 user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+}
+#battle .opponents {
+	margin: 14px 0 0 27px;
+}
+#battle-side2 .field .letter {
+	/*-webkit-transform: rotate(180deg);
+	-moz-transform: rotate(180deg);
+    -o-transform: rotate(180deg);*/
+}
+#battle .field {
+	width: 236px;
+    height: 236px;
+    border: 1px solid #ccc;
+    margin: 5px auto;
+    border-radius: 2px;
+    text-align: center;
+}
+#battle .field-inner {
+	margin: 5px 0 0 6px;
+    position: relative;
+    overflow: hidden;
+}
+#battle .field .cell {
+	width: 41px;
+	height: 41px;
+	line-height: 41px;
+	display: block;
+    background-color: #F1E9E9;
+    border-radius: 4px;
+    float: left;
+    margin: 0 5px 5px 0;
+}
+#battle .field .letter {
+	width: 41px;
+	height: 41px;
+	line-height: 41px;
+    text-transform: uppercase;
+    font-size: 17px;
+    background-color: #F1E9E9;
+    position: absolute;
+    border-radius: 4px;
+    transition: top .2s ease, left .2s ease;
+}
+#battle .field .letter {
+	cursor: pointer;
+    background-color: #AFCBE6;
+    color: #444;
+}
+#battle-side2 .field .letter {
+	cursor: default;
+}
+#battle .field .letter.selected {
+	background-color: #7CA5CC;
+}
+#battle .field .letter.submit {
+	background-color: #41EC6C;
+	cursor: default;
+	z-index: 1;
+}
+#battle .field .letter.src-anim {
+	top: -90px !important;
+	transition: top 0.5s ease;
+}
+#battle .field .letter.src-anim2 {
+	top: 263px !important;
+	transition: top 0.5s ease;
+}
+#battle .field .letter.dest-anim {
+	background-color: #F9BD82 !important;
+	top: -90px;
+	transition: top 0.5s ease;
+	z-index: 2;
+}
+#battle .field .letter.dest-anim2 {
+	background-color: #F9BD82;
+	top: 263px;
+	transition: top 0.5s ease;
+	z-index: 2;
+}
+#battle .field .letter.finished {
+	transition: top 1.0s cubic-bezier(0.4, 0, 1, 1), left 1.0s ease;
+}
+
+#battle-log {
+	width: 200px;
+    position: absolute;
+    right: -222px;
+    top: 0;
+}
+
+/** Контейнер слова **/
+#word-container {
+	width: 401px;
+	height: 38px;
+    text-align: center;
+    background-color: #FBFBFB;
+    border-radius: 2px;
+    border: 1px solid #ccc;
+    padding: 2px 0;
+    margin:	15px auto 0;
+    position: relative;
+}
+#word-container.valid li {
+	background-color: #41EC6C;
+	cursor: pointer;
+}
+#word-container.more-letters li {
+	width: 26px;
+}
+#word-container ul {
+	display: inline-block;
+}
+#word-container li {
+	width: 38px;
+    height: 38px;
+    line-height: 38px;
+    display: inline-block;
+    background-color: #F9BD82;
+    text-transform: uppercase;
+    text-align: center;
+    font-size: 14px;
+    font-style: italic;
+}
+#word-container li:first-child {
+	border-radius: 2px 0 0 2px;
+}
+#word-container li:last-child {
+	border-radius: 0 2px 2px 0;
+}
+#word-container .hint {
+	font-size: 13px;
+	display: inline-block;
+	margin-top: 11px;
+	font-style: italic;
+	color: #444;
+}
+#word-container .clear-word-btn {
+	display: inline-block;
+	top: 7px;
+	right: 6px;
+	position: absolute;
+	font-family: arial;
+	color: #777;
+	font-size: 23px;
+	cursor: pointer;
+}
+#word-container .clear-word-btn:hover {
+	color: #444;
+}
+/*** Окно результатов боя */
+#battle-result-window .rating-points, #battle-result-window .new-league-text {
+	text-align: center;
+    color: #357F96;
+    line-height: 27px;
+    font-size: 20px;
+    margin: 28px 0 0 0;
+    font-weight: bold;
+}
+#battle-result-window .new-league-text {
+	margin: 12px 0 0 0;
+	font-style: 23px;
+}
+
+/*** Окно восстановления эрегии */
+#energy-window {
+	color: #444;
+}
+#energy-window .hints {
+    text-align: center;
+    vertical-align: middle;
+    margin: 14px 0px 0;
+    height: 38px;
+    overflow: hidden;
+    border-radius: 2px;
+    font-style: italic;
+}
+#energy-window button {
+	width: 127px;
+	font-size: 14px;
+	margin: 12px 11px 0 28px;
+}
+#energy-window #money-energy-btn {
+	background-color: #567DBF;
+	margin: 20px 11px 0 28px;
+}
+
+/*** Окно рейтинга */
+#rating-list {
+	font-size: 12px;
+	text-align: center;
+	height: 469px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+#rating-list li {
+	line-height: 28px;
+	margin-bottom: -5px;
+}
+#rating-list span {
+	display: inline-block;
+	overflow: hidden;
+}
+#rating-list .rating-list-place {
+	width: 40px;
+}
+#rating-list .rating-list-online {
+	background-repeat: no-repeat;
+	width: 13px;
+    height: 13px;
+    background-image: url(../img/online_icon.png);
+    position: relative;
+    top: -7px;
+    margin: 0 7px 0 0;
+    display: none;
+}
+#rating-list .rating-list-header .rating-list-online {
+	background: none;
+}
+#rating-list .rating-list-online.online {
+    background-position: -13px -13px;
+}
+#rating-list .rating-list-online.offline {
+    background-position: 0 0;
+}
+#rating-list .rating-list-title img {
+	width: 30px;
+	height: 30px;
+	float: left;
+	padding-right: 5px;
+}
+#rating-list .rating-list-title {
+	width: 200px;
+	height: 30px;
+	text-align: left;
+}
+#rating-list .rating-list-header .rating-list-title {
+	text-align: center;
+	height: auto;
+}
+#rating-list .rating-list-league {
+	width: 100px;
+}
+#rating-list .rating-list-points {
+	width: 50px;
+}
+#rating-list .my-result {
+    background-color: #F7F179;
+    padding: 5px 0 0 0 !important;
+    margin: 0 !important;
+}
+
+#s1,#s2 {
+	font-size: 0px;
+	font-weight: bold;
+	color: red;
+	font-family: tin;
+	transition: font-size 0.7s cubic-bezier(0.4, 0, 1, 1), opacity 1.7s cubic-bezier(0.4, 0, 1, 1), left 0.7s cubic-bezier(0.4, 0, 1, 1);
+	position: absolute;
+	top: 188px;
+	left: 713px;
+	z-index: 1;
+}
+#s1 {
+	transition: font-size 0.7s cubic-bezier(0.4, 0, 1, 1), opacity 1.7s cubic-bezier(0.4, 0, 1, 1), left 0.7s cubic-bezier(0.4, 0, 1, 1);
+}
