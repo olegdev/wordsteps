@@ -63,7 +63,7 @@ define([
 		onChange: function() {
 			var me = this,
 				word = '', valid;
-			if (this.word.length >= 3) {
+			if (this.word.length >= 2) {
 				this.word.forEach(function(item) {
 					word += item.letter;
 				});
